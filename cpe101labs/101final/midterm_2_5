@@ -1,0 +1,11 @@
+word = "eighteen"
+string = "abcdfjklmopqrsuvwxyz"
+def avoids(word, string):
+   for each_letter in word:
+      for the_letter in string:
+         if each_letter == the_letter:
+            return False
+   return True
+
+print(avoids(word, string))
+

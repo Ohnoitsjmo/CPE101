@@ -1,0 +1,9 @@
+list_of_strings = ["Hi!", "ball", "octopodes", "ABC"]
+def starting_letter(list_of_strings):
+   res = []
+   for each_string in list_of_strings:
+      res.append(each_string[0])
+   return res
+
+print(starting_letter(list_of_strings))
+   

@@ -1,0 +1,15 @@
+lists =  [[1, 2, 3, 4], [-3, 5, 12, 16], [4], [0, 100]]
+number = 100
+def find(lists, number):
+   index = 0
+   for each_list in lists:
+      inner_index = 0
+      for each_number in each_list:
+         if each_number == number:
+            return "({:d}, {:d})".format(index, inner_index)
+         inner_index += 1
+      index += 1
+
+print(find(lists, number))
+         
+

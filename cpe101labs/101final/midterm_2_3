@@ -1,0 +1,11 @@
+list_of_numbers = [3, -1, 2, 10, -100]
+def cumulative_sum(list_of_numbers):
+   sum = 0
+   res = []
+   for each_number in list_of_numbers:
+      sum += each_number
+      res.append(sum)
+   return res
+
+print(cumulative_sum(list_of_numbers))
+

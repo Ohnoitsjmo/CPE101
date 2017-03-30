@@ -1,0 +1,17 @@
+import math
+points = [(4.0, 3.0), (10.3, 7.2), (2.22, 4.1)]
+distance = 5.4
+def calc_distance(point):
+   distance = math.sqrt((point[0])**2 + (point[1])**2)
+   return distance
+def close_to_origin(points, distance):
+   res = []
+   for point in points:
+      actual_distance = calc_distance(point)
+      if actual_distance < distance:
+         res.append(tuple(point))
+   return res
+
+print(close_to_origin(points, distance))
+   
+
