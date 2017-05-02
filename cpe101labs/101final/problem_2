@@ -1,0 +1,21 @@
+nums = [[98, 90, 91], 
+        [46, 76, 62], 
+        [85, 90, 83], 
+        [77, 79, 81]]
+number = 90
+def search_2D(nums, number):
+   length_of_row = len(nums)
+   length_of_column = 3
+   res = []
+   index = 0
+   for each_list in nums:
+      for each_num in each_list:
+         row = index//3 
+         column = index%length_of_column 
+         if number == each_num:
+            res.append(tuple("{:d}{:d}".format(row, column)))
+         index += 1
+   return res
+
+print(search_2D(nums, number))        
+

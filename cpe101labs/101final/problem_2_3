@@ -1,0 +1,16 @@
+nums = [[98, 90, 91], [46, 76, 62], [85, 90, 83], [77, 79, 81]]
+number = 90
+def search_2D(nums, number):
+   index = 0
+   res = []
+   for each_list in nums:
+      inner_index = 0
+      for each_number in each_list:
+         if each_number == number:
+            res.append((index, inner_index))
+         inner_index += 1
+      index += 1
+   return res
+ 
+print(search_2D(nums, number))
+            

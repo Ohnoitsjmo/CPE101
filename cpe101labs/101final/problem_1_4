@@ -1,0 +1,9 @@
+nums = [[98, 90, 91], [46, 76, 62], [85, 90, 83], [77, 79, 81]]
+def sum_2D_indices(nums): 
+   count = 0
+   for each_list in nums:
+      for each_num in each_list:
+         count += each_num
+   return count
+
+print(sum_2D_indices(nums))

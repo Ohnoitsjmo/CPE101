@@ -1,0 +1,22 @@
+lines = ['Hello there.',
+'How now brown cow?',
+'I like cheese']
+character = 'o'
+
+def counter(line, char):
+   count = 0
+   for each_char in line:
+      if char == each_char:
+         count += 1
+   return count
+   
+
+def line_counts(lines, character):
+   res = []
+   for each_line in lines:
+      count = counter(each_line, character)
+      res.append(count)
+   return res
+
+
+print(line_counts(lines, character))

@@ -1,0 +1,30 @@
+import math
+
+class Point:
+   def __init__(self, x, y):
+      self.x = x
+      self.y = y
+
+class Circle:
+   def __init__(self, center , rad):
+      self.center = center
+      self.radius = rad
+
+circles = [Circle(Point(1, 2), 1), Circle(Point(2, 3), 1), Circle(Point(2, 4), 1)]
+
+def distance(c1, c2):
+   distance = math.sqrt((c1.center.x - c2.center.x) ** 2 + (c1.center.y - c2.center.y) ** 2)
+   return distance
+
+def farthest_circles(circles):
+   final_distance = 0
+   for circle_1 in circles:
+      for circle_2 in circles:
+         old_distance = distance(circle_1, circle_2)
+         if old_distance > final_distance:
+            final_distance = old_distance
+            circle_a = circle_1
+            circle_b = circle_2
+   return ((circle_a, circle_b))
+   
+print(farthest_circles(circles))

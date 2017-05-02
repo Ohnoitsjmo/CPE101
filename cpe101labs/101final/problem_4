@@ -1,0 +1,18 @@
+list_of_strings = ['Hello there.', 'How now brown cow?', 'I like cheese']
+single_character = 'o'
+def line_counts(list_of_strings, single_character):
+   res = []
+   for string in list_of_strings:
+      count = 0
+      if single_character in string:
+         for each_o in string:
+            if each_o == single_character:
+               count+=1
+            else:
+               continue
+      else:
+         continue
+      res.append(count)
+   return res
+
+print(line_counts(list_of_strings, single_character))

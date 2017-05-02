@@ -1,0 +1,17 @@
+string = "abc123xyz09"
+def down_shift(string):
+   new_string = ''
+   for each_character in string:
+      if each_character.isdigit() == True:
+         if each_character == '0':
+            new_string += '9'
+         else:   
+            each_character = int(each_character)
+            each_character -= 1
+            new_string += str(each_character)
+      else:
+         new_string += each_character
+   return new_string
+
+print(down_shift(string))
+

@@ -1,0 +1,3 @@
+How much do you weigh (pounds)? How far away is your professor (meters)? Will you throw a rotten (t)omato, banana cream (p)ie, (r)ock, (l)ightsaber, or lawn (g)nome? 
+Nice throw! You're going to get an F!
+Velocity of skater: 0.690 m/s
