@@ -1,3 +1,7 @@
+# Justin Mo
+# Dieter, Koller
+# CPE 103 
+
 #* Section 1 (Git)
 
 # 1) persnickety
@@ -12,13 +16,13 @@ class Farenheit:
 
       def __init__(self, celsius):
          self.celsius = celsius
-	 self.farenheit = (self.celsius*1.8) + 32
+         self.farenheit = (self.celsius*1.8) + 32
 
       def __repr__(self):
-	 return ("Farenheit: {:f}".format(self.farenheit))
+         return ("Farenheit: {:f}".format(self.farenheit))
 
       def __eq__(self, other):
-	 return type(other) == Farenheit and self.farenheit == other.farenheit
+         return type(other) == Farenheit and self.farenheit == other.farenheit
 
 
 #* 2) 
@@ -44,7 +48,7 @@ class PriceName:
 
       def __init__(self, price, name):
          self.price = price*100
-	 self.name = name
+         self.name = name
 
       def __repr__(self):
          return ("Name: {:s}, Price: {:f}".format(self.name, self.price))
@@ -74,7 +78,7 @@ class OpenTab:
 #* 1)
 # signature: add_tax int int -> int
 # purpose: return the price of an item after adding sales tax
-def add_tax(price, tax):
+def add_tax(price):
    pass
 
 #* 2)
@@ -103,14 +107,14 @@ def city_overlap(region, database):
 def second_largest(number_one, number_two, number_three):
    pass
 
-import unittest
-class test_second_largest(unittest.TestCase):
-   def test_1(self):
-      self.assertEqual(second_largest(1, 2, 3), 2)
-   def test_2(self):
-      self.assertEqual(second_largest(2, 4, 6), 4)
-if __name__ == '__main__':
-   unittest.main()
+#import unittest
+#class test_second_largest(unittest.TestCase):
+   #def test_1(self):
+      #self.assertEqual(second_largest(1, 2, 3), 2)
+   #def test_2(self):
+      #self.assertEqual(second_largest(2, 4, 6), 4)
+#if __name__ == '__main__':
+   #unittest.main()
 
 #* 2)
 # contract: no_capitals str -> boolean
@@ -118,14 +122,14 @@ if __name__ == '__main__':
 def no_capitals(string):
    pass
 
-import unittest
-class no_capitals(unittest.TestCase):
-   def test_1(self):
-      self.assertTrue(no_capitals(HELLO))
-   def test_2(self):
-      self.assertFalse(no_capitals(hello))
-if __name__ == '__main__':
-   unittest.main()
+#import unittest
+#class no_capitals(unittest.TestCase):
+   #def test_1(self):
+      #self.assertTrue(no_capitals(HELLO))
+   #def test_2(self):
+      #self.assertFalse(no_capitals(hello))
+#if __name__ == '__main__':
+   #unittest.main()
 
 #* 3)
 # contract: most_north str str -> str
@@ -133,14 +137,14 @@ if __name__ == '__main__':
 def most_north(state_1, state_2):
    pass
 
-import unittest
-class most_north(unittest.TestCase):
-   def test_1(self):
-      self.assertEqual(most_north(Texas, California), California)
-   def test_2(self):
-      self.assertEqual(most_north(Illinois, Michigan), Michigan)
-if __name__ == '__main__':
-   unittest.main()
+#import unittest
+#class most_north(unittest.TestCase):
+   #def test_1(self):
+      #self.assertEqual(most_north(Texas, California), California)
+   #def test_2(self):
+      #self.assertEqual(most_north(Illinois, Michigan), Michigan)
+#if __name__ == '__main__':
+   #unittest.main()
 
 #* Section 5 (Whole Functions)
 
@@ -148,17 +152,17 @@ if __name__ == '__main__':
 # signature: f2m int -> float
 # purpose: return the length in meters given the length in feet
 def f2m(feet):
-      meters = feet*.3048
+      meters = feet*0.3048
       return meters 
 
-import unittest
-class f2m(unittest.TestCase):
-   def test_1(self):
-      self.assertEqual(f2m(30), 9.144)
-   def test_2(self):
-      self.assertEqual(f2m(10), 3.048)
-if __name__ == '__main__':
-   unittest.main()
+#import unittest
+#class f2m(unittest.TestCase):
+   #def test_1(self):
+      #self.assertEqual(f2m(30), 9.144)
+   #def test_2(self):
+      #self.assertEqual(f2m(10), 3.048)
+#if __name__ == '__main__':
+   #unittest.main()
 
 #* 2) 
 # frequency is an integer
@@ -166,7 +170,7 @@ if __name__ == '__main__':
 # signature: MusicalNote int int -> int int
 # purpose: return pitch in hz and duration in seconds 
 class MusicalNote:
-   def __init__(self, frequency, seconds_duration):
+   def __init__(self, frequency, duration):
       self.frequency = frequency
       self.duration = duration
 
@@ -174,46 +178,48 @@ class MusicalNote:
       return ("Pitch: {:d}, Duration: {:d}".format(self.frequency, self.duration))
 
    def __eq__(self, other):
-      return (self.frequency == other.frequency) and (self.duration == other.duration)
+      return type(other) == MusicalNote and self.frequency == other.frequency and self.duration == other.duration
 	   
-import unittest
-class most_north(unittest.TestCase):
-   def test_1(self):
-      self.assertEqual(MusicalNote(3500, 10), "Pitch: 3500, Duration: 10")
-   def test_2(self):
-      self.assertEqual(MusicalNote(4000, 20), "Pitch: 4000, Duration: 20")
-if __name__ == '__main__':
-   unittest.main()
+#import unittest
+#class TestCases(unittest.TestCase):
+   #def test_1(self):
+      #self.assertEqual(MusicalNote(3500, 10), "Pitch: 3500, Duration: 10")
+   #def test_2(self):
+      #self.assertEqual(MusicalNote(4000, 20), "Pitch: 4000, Duration: 20")
+#if __name__ == '__main__':
+   #unittest.main()
 
 #* 3) 
 # signature: up_one_octave int -> int
 # purpose: return a note that is one octave higher by doubling the frequency
-def up_one_octave(note):
-   new_note = MusicalNote.frequency*2
-   return new_note
+def up_one_octave(note2):
+   if type(note2) == MusicalNote:
+      return MusicalNote(note2.frequency*2, note2.duration)
+   return None
 
-import unittest
-class up_one_octave(unittest.TestCase):
-   def test_1(self):
-      self.assertEqual(up_one_octave(2500), 5000)
-   def test_2(self):
-      self.assertEqual(up_one_octave(3000), 6000)
-if __name__ == '__main__':
-   unittest.main()
+#import unittest
+#class up_one_octave(unittest.TestCase):
+   #def test_1(self):
+      #self.assertEqual(up_one_octave(2500), 5000)
+   #def test_2(self):
+      #self.assertEqual(up_one_octave(3000), 6000)
+#if __name__ == '__main__':
+   #unittest.main()
          
 #* 4)
 # signature: up_one_octave_m int -> None
 # purpose: return None when given frequency because the function mutates the object itself
-def up_one_octave_m(note):
-   MusicalNotes.frequency *= 2
+def up_one_octave_m(note1):
+   if type(note1) == MusicalNote:
+      note1.frequency = note1.frequency*2
+   return None
    
-import unittest
-class up_one_octave_m(unittest.TestCase):
-   def test_1(self):
-      self.assertEqual(up_one_octave_m(2500), None)
-   def test_2(self):
-      self.assertEqual(up_one_octave_m(3000), None)
-if __name__ == '__main__':
-   unittest.main()   
+#import unittest
+#class up_one_octave_m(unittest.TestCase):
+   #def test_1(self):
+      #self.assertEqual(up_one_octave_m(2500), None)
+   #def test_2(self):
+      #self.assertEqual(up_one_octave_m(3000), None)
+#if __name__ == '__main__':
+   #unittest.main()   
       
-
